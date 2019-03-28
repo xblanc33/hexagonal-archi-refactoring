@@ -1,4 +1,5 @@
 .gradle
+.sonarlint
 /build/
 
 # Ignore Gradle GUI config
