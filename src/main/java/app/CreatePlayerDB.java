@@ -11,7 +11,7 @@ public class CreatePlayerDB {
     static final String APP_URL = "jdbc:mysql://localhost/APP";
 
     static final String USER = "root";
-    static final String PASS = "root";
+    static final String PASS = "ROOT";
 
     static Connection connection;
     

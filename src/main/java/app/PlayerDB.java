@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.Clock;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,7 +20,7 @@ public class PlayerDB {
     private final String DATA_BASE = "APP";
     private final String PLAYER_TAB = "PLAYER";
     private final String USER = "root";
-    private final String PASSWORD = "root";
+    private final String PASSWORD = "ROOT";
 
     public PlayerDB() {
         cache = new HashSet<Player>();
@@ -48,9 +47,8 @@ public class PlayerDB {
             lastTime = System.currentTimeMillis();
             cacheIsUpdate = true;
             cache = new HashSet<Player>(playerSet);
-
         }
-		return cache;
+		return new HashSet<Player>(cache);
 	}
 
     public void add(Player player) throws ClassNotFoundException, SQLException {

@@ -14,12 +14,12 @@ repositories {
 }
 
 dependencies {
-  compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+  compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.14'
   testCompile 'junit:junit:4.12'
 }
 
 apply plugin: 'application'
-mainClassName = "app.PlayerMain"
+mainClassName = "app.CreatePlayerDB"
 
 run {
    standardInput = System.in

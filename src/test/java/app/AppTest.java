@@ -2,19 +2,21 @@ package app;
 
 import static org.junit.Assert.*;
 
+import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.Test;
 
 import app.Player;
+import app.PlayerDB;
 
 
 public class AppTest {
 
     @Test
     public void testPlayer() {
-        Player alice = new Player("winner");
+        Player alice = new Player("alice");
         Player bob = new Player("bob");
         assertFalse(alice.equals(bob));
 
@@ -29,6 +31,21 @@ public class AppTest {
     }
 
     @Test
-    public void 
+    public void testPlayerDB() {
+        try {
+            Player alice = new Player("alice");
+            PlayerDB db = new PlayerDB();
+            Set<Player> playerSetBefore = db.getPlayerSet();
+            db.add(alice);
+            Set<Player> playerSet = db.getPlayerSet();
+            System.out.println(playerSet.size());
+            assertTrue(playerSet.size() == playerSetBefore.size());
+        } catch (ClassNotFoundException ex) {
+            assertFalse(true);
+        } catch (SQLException ex) {
+            assertFalse(false);
+        }
+        
+    }
 
 }
