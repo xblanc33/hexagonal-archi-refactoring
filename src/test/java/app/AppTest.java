@@ -39,11 +39,11 @@ public class AppTest {
             db.add(alice);
             Set<Player> playerSet = db.getPlayerSet();
             System.out.println(playerSet.size());
-            assertTrue(playerSet.size() == playerSetBefore.size());
+            assertTrue(playerSet.size() == 15);
         } catch (ClassNotFoundException ex) {
             assertFalse(true);
         } catch (SQLException ex) {
-            assertFalse(false);
+            assertFalse(true);
         }
         
     }
